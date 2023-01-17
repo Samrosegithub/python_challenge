@@ -17,11 +17,11 @@ Change = []
 greatest_increase = 0
 greatest_decrease = 9999999999999999999
 
+    for row in csvreader:
 csvreader = csv.reader(csvfile, delimiter=',')
 csv_header = next(csvreader)
 with open(csvpath) as csvfile:
-    for row in csvreader:
-        index = 0
+    index = 0
     months_total += 1
     months_total.append(row[0])
     profit_Losses.append(row[1])
