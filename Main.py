@@ -4,11 +4,10 @@
 import os
 # Module for reading CSV files
 import csv
-csvpath = os.path.join('Resources', 'budget_data.csv')
-with open(csvpath) as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
-    csv_header = next(csvreader)
 
+csvpath = os.path.join('Resources', 'budget_data.csv')
+
+#variables
 months_total = 0
 profit_Losses = 0
 total_profits_sum = 0
@@ -18,32 +17,34 @@ Change = []
 greatest_increase = 0
 greatest_decrease = 9999999999999999999
 
-csvreader = csv.reader(csvfile, delimiter=',')
-csv_header = next(csvreader)
 with open(csvpath) as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
+    csv_header = next(csvreader)
+    row_1 = next(csvreader)
+    months_total += 1 
+    
     for row in csvreader:
         index = 0
-    months_total += 1
-    months_total.append(row[0])
-    profit_Losses.append(row[1])
-    difference_total.append(difference)
-    profit_Losses = profit_Losses + int(row[1])
-    difference = int(row[1]) - profit_Losses
-    difference = difference + [row[2]]
+    profit_Losses += int(row_1[1])
     total_profits_sum = int(row[1])
-    change = change + [row[0]]
-    if (index == 0):
-        index += 1
-    months_total = months_total + 1
-    print(len(months_total))
+    
+    difference_total.append(row[0])
+    
+    difference = int(row[1]) - total_profits_sum
+    change.append(difference)
+    total_profits_sum = int(row[1]
+    months_total += 1  
+                            
+    profit_Losses = profit_Losses + int(row[1])
+    average = sum(Change)/len(Change)
 
 total_profits_sum = sum(total_profits)
 
 print(total_profits_sum)
 greatest_decrease = min(difference_total)
 greatest_increase = max(difference_total)
-greatest_decrease = difference_total.index(greatest_decrease)+1
-greatest_increase = difference_total.index(greatest_increase)+1
+greatest_decrease = difference_total.index(greatest_decrease)
+greatest_increase = difference_total.index(greatest_increase)
 
 print("Financial Analysis")
 
