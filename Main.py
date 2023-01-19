@@ -108,8 +108,7 @@ for row in csvreader:
     print("Election Results")
     print(f'Total votes: [{percent_votes}')
 
-print("Election Results")
 for x in candidate_options:
-print(percent_votes)
-print(f'Winner: ', candidate_options[percent_votes.index(max(percent_votes))])
-print(total_votes)
+
+    print(f'Winner: ', candidate_options[percent_votes.index(max(percent_votes))])
+    print(total_votes)
