@@ -99,7 +99,8 @@ for row in csvreader:
                   
     for candidate,  in ballot_id.items():
             if x > candidate_options:
-                  
+  
+  percent_votes = round(candidate_options(candidate) *100 /total_votes)                
            
     candidate_votes[candidate_options[x]] = count
     candidate_options.remove(candidate_options[0])
@@ -107,8 +108,8 @@ for row in csvreader:
     print("Election Results")
     print(f'Total votes: [{percent_votes}')
 
+print("Election Results")
 for x in candidate_options:
-print(percent_votes*100)
+print(percent_votes)
 print(f'Winner: ', candidate_options[percent_votes.index(max(percent_votes))])
 print(total_votes)
-
