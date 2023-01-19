@@ -68,6 +68,7 @@ print(
 import os
 # Module for reading CSV files
 import csv
+                            
 csvpath = os.path.join('election_data.csv')
 # /Users/home/Desktop/python_challenge/PyBank/Resources/election_data.csv
 print("Test Demo: ", csvpath)
@@ -78,13 +79,6 @@ total_votes = 0
 candidate_options = 0
 candidate = ""   
                             
-total_candidate = []
-list_1 = []
-percent_votes = []
-candidate_options = []
-winner = []
-candidate_votes = {}
-total_country = []
 # find out hwo to add items to dictionary add 1 + item to each to find # of items / total_votes
 
 with open('election_data.csv') as csvfile:
@@ -107,7 +101,7 @@ for row in csvreader:
             if x > candidate_options:
                   
            
-        candidate_votes[candidate_options[x]] = count
+    candidate_votes[candidate_options[x]] = count
     candidate_options.remove(candidate_options[0])
     percent_votes = candidate_options/total_votes
     print("Election Results")
@@ -115,8 +109,6 @@ for row in csvreader:
 
 for x in candidate_options:
 print(percent_votes*100)
-print(f'Winner: ',
-candidate_options[percent_votes.index(max(percent_votes))])
-total_votes = total_votes + 1
+print(f'Winner: ', candidate_options[percent_votes.index(max(percent_votes))])
 print(total_votes)
 
