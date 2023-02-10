@@ -65,20 +65,7 @@ can = candidates[0]
 
 print(sum)
 
-report = (
-    f"{' Election Results ':^36}\n"
-    f"{'--':-^36}\n"
-    f"{'Total Votes:':12}{total:12,}{100:11,.2f}%\n"
-    f"{'--':-^36}\n"
-    f"{''.join(lines)}"
-    f"{'--':-^36}\n"
-    f"{'Winner:':12}{votes[winner]:12,}{winner:>12}\n"
-    f"{'--':-^36}\n"
-)
-
-
-output = f""
-
+output = f""{
 Election Results
 -------------------------
 Total Votes: {total_votes}
@@ -86,8 +73,9 @@ Total Votes: {total_votes}
 Charles Casper Stockham: 23.049% (85213)
 Diana DeGette: 73.812% {total}
 Raymon Anthony Doane: 3.139% (11606)
--------------------------
+------------------------
 Winner: {winner}
+}
 ""
 print(output)
 
